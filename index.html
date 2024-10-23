@@ -13,7 +13,7 @@
     </head>
     <body>
         <main class="container">
-            <h1 class="text-center mb-4">Biglietto Treno</h1>
+            <h1 class="text-center my-4">Biglietto Treno</h1>
             <form class="row">
                 <div class="col-md-4 mb-3">
                     <label for="userName" class="form-label"
@@ -53,9 +53,74 @@
                 </div>
             </form>
 
-            <h2 id="result" class="mt-4 text-center">
-                Ticket will be shown here
-            </h2>
+            <section
+                id="ticketSection"
+                class="mt-5 d-none border-top border-bottom border-warning border-5 rounded"
+            >
+                <div class="row">
+                    <div class="d-flex col-12 justify-content-between">
+                        <div class="d-flex column-gap-3">
+                            <div>
+                                <span>Class:</span>
+                                <p class="text-center fw-semibold">STD</p>
+                            </div>
+                            <div>
+                                <span>Ticket type:</span>
+                                <p class="text-center fw-semibold">SINGLE</p>
+                            </div>
+                        </div>
+                        <div class="d-flex column-gap-3">
+                            <div>
+                                <span>Adult:</span>
+                                <p class="text-center fw-semibold">ONE</p>
+                            </div>
+                            <div>
+                                <span>Child:</span>
+                                <p class="text-center fw-semibold">NIL</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="d-flex col-12 justify-content-center align-center"
+                    >
+                        <h2>Mind the gap!</h2>
+                    </div>
+                    <div class="d-flex col-12 justify-content-between">
+                        <div class="d-flex column-gap-3">
+                            <div>
+                                <span>Name:</span>
+                                <p
+                                    class="text-center fw-semibold"
+                                    id="ticketName"
+                                ></p>
+                            </div>
+                            <div>
+                                <span>Age:</span>
+                                <p
+                                    class="text-center fw-semibold"
+                                    id="ticketAge"
+                                ></p>
+                            </div>
+                        </div>
+                        <div class="d-flex column-gap-3">
+                            <div>
+                                <span>Cost:</span>
+                                <p
+                                    class="text-center fw-semibold"
+                                    id="ticketCost"
+                                ></p>
+                            </div>
+                            <div>
+                                <span>Valid From:</span>
+                                <p
+                                    class="text-center fw-semibold"
+                                    id="ticketValidDate"
+                                ></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <script

@@ -1,27 +1,37 @@
 console.log('Biglietto Treno')
 
-let userNameForm, userAgeForm, userTravelForm, finalPrice
+let userNameValue, userAgeValue, userTravelValue, finalPrice
 
 const submitUserButton = document.getElementById('submitUserInfoBtn')
 
 submitUserButton.addEventListener('click', (event) => {
     event.preventDefault()
 
-    userNameForm = document.getElementById('userName')
-    userTravelForm = document.getElementById('travelLengthKm')
-    userAgeForm = document.getElementById('userAge')
+    userNameValue = document.getElementById('userName').value
+    userTravelValue = document.getElementById('travelLengthKm').value
+    userAgeValue = document.getElementById('userAge').value
 
-    const ticketCost = getTicketCost(userTravelForm.value, userAgeForm.value)
+    const ticketCostValue = getTicketCost(userTravelValue, userAgeValue)
 
-    console.log(userNameForm.value, userTravelForm.value, userAgeForm.value)
+    // console.log(userNameForm.value, userTravelForm.value, userAgeForm.value)
 
-    const finalTicket = document.getElementById('result')
+    const ticketName = document.getElementById('ticketName')
+    const ticketAge = document.getElementById('ticketAge')
+    const ticketCost = document.getElementById('ticketCost')
+    const ticketDate = document.getElementById('ticketValidDate')
 
-    finalTicket.innerText = `
-    Passenger Name: ${userNameForm.value}
-    Passenger Age: ${userAgeForm.value}
-    Ticket cost: ${ticketCost} €
-    `
+    const today = new Date()
+
+    ticketName.innerText = userNameValue
+    ticketAge.innerText = userAgeValue
+    ticketCost.innerText = ticketCostValue + '€'
+    ticketDate.innerText = `${today.getDate()}/${
+        today.getMonth() + 1
+    }/${today.getFullYear()}`
+
+    const ticketSection = document.getElementById('ticketSection')
+
+    ticketSection.classList.toggle('d-none')
 })
 
 function getTicketCost(userTravel, userAge) {
